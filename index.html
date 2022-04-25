@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras Geometricas</title>
+</head>
+<body>
+    <h1>Figuras Geometricas</h1>
+    <section>
+        <h2>Calcula el área y perímetro de un cuadrado</h2>
+        <form>
+          <label for="InputCuadrado">
+            Escribe cuánto mide cada lado de tu cuadrado:
+          </label>
+          <input id="InputCuadrado" type="number" />
+          <button type="button" onclick="calcularPerimetroCuadrado()">
+            Calcular el perímetro
+          </button>
+          <button type="button" onclick="calcularAreaCuadrado()">
+            Calcular el área
+          </button>
+        </form>
+        
+      </section>
+<script >
+    //CUADRADO
+    //declaramos la variable con el valor del lado del areaCuadrado.
+    console.group("Cuadrados");
+    // const ladoCuadrado = 5;
+    // console.log("Los lados del cuadrado miden: " + ladoCuadrado + "cm");
+
+
+    // const perimetroCuadrado = ladoCuadrado *4;
+    // console.log("el perimetro del cuadrado es:" + perimetroCuadrado + "cm")
+    function perimetroCuadrado(lado) {
+        return lado * 4;
+    }
+    function areaCuadrado(lado) {
+        return lado * lado;
+}
+    // const areaCuadrado = ladoCuadrado * ladoCuadrado;
+    // console.log("el area del cuadrado es:" + areaCuadrado + "cmˆ2")
+    console.groupEnd();
+    //TRIANGULO
+    console.group("Triángulos");
+    //DECLARAMOS VARIABLES DE LOS LADOS  y la algura DEL TRIANGULO.
+    // const ladoTriangulo1 = 6;
+    // const ladoTriangulo2 = 6;
+    // const ladoTriangulo3 = 4;
+    // const alturaTriangulo = 5.5;
+    // console.log(
+    //   "Los lados del triángulo miden: "
+    //   + ladoTriangulo1
+    //   + "cm, "
+    //   + ladoTriangulo2
+    //   + "cm, "
+    //   + baseTriangulo
+    //   + "cm"
+    // );
+    // console.log("La altura del triángulo es de: " + alturaTriangulo + "cm");
+    //realizamos funcion para calcular perimtro del triangulo.
+    function perimetroTriangulo(lado1, lado2, base) {
+        return lado1 + lado2 + base;
+    }
+    // FUNCION PARA EL AREA DEL TRIANGULO.
+    function areaTriangulo(base, altura) {
+        return (base * altura) / 2;
+    }
+    //indicamos que en la consola nos muestre la respuesta
+    // console.log("El perímetro del triángulo es: " + perimetroTriangulo + "cm");
+    // console.log("El área del triángulo es: " + areaTriangulo + "cmˆ2");
+    console.groupEnd();
+    // FUNCIONES PARA EL CIRCULO
+    console.group("Círculos");
+    // RADIO DEL CIRCULO
+    // const radioCirculo = 4;
+    // console.log("El radio del círculo es: " + radioCirculo + "cm");
+
+    // Diámetro
+    function diametroCirculo(radio) {
+    return radio * 2;
+    }
+    // PI
+    const PI = Math.PI;
+    console.log("PI es: " + PI);
+    // PERIMETRO CIRCULO
+    function perimetroCirculo(radio) {
+    const diametro = diametroCirculo(radio);
+    return diametro * PI;
+    }
+    // Área
+    function areaCirculo(radio) {
+    return (radio * radio) * PI;
+    }
+    console.groupEnd();
+
+
+    // Aquí lo enlazamos  con el HTML
+    function calcularPerimetroCuadrado() {
+    const input = document.getElementById("InputCuadrado");
+    const value = input.value;
+
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+    }
+    function calcularAreaCuadrado() {
+    const input = document.getElementById("InputCuadrado");
+    const value = input.value;
+
+    const area = areaCuadrado(value);
+    alert(area);
+    }
+    function calcularPerimetroTriangulo() {
+    const input = document.getElementById("InputTriangulo");
+    const value = input.value;
+
+    const perimetro = perimetroTriangulo(value);
+    alert(perimetro);
+    }
+    function calcularAreaTriangulo() {
+    const input = document.getElementById("InputTriangulo");
+    const value = input.value;
+
+    const area = areaTriangulo(value);
+    alert(area);
+    }  
+
+</script>
+</body>
+</html>
